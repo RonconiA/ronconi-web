@@ -3,3 +3,7 @@ uvicorn
 pydantic
 email-validator
 python-multipart
+PyMySQL
+python-dotenv
+resend
+requests
