@@ -150,6 +150,41 @@ def receive_contact(data: ContactForm):
 
         print("✅ Email inviata correttamente")
 
+        resend.Emails.send({
+
+            "from": "onboarding@resend.dev",
+
+            "to": [data.email],
+
+            "subject": "Messaggio ricevuto con successo",
+
+            "html": f"""
+
+            <h2>✓ Messaggio ricevuto!</h2>
+
+            <p>Ciao {data.fullname},</p>
+
+            <p>
+            grazie per aver dedicato qualche minuto a visitare il mio portfolio.
+            </p>
+
+            <p>
+            Ho ricevuto il tuo messaggio e ti risponderò il prima possibile.
+            </p>
+
+            <p>
+            Nel frattempo, ti auguro una splendida giornata.
+            </p>
+
+            <br>
+
+            <p>— Joaquín Ronconi</p>
+
+            """
+        })
+
+        print("✅ Email di conferma inviata")
+
         # -----------------------------
         # LOG TERMINALE
         # -----------------------------
