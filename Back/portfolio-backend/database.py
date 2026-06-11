@@ -1,13 +1,15 @@
+import os
 import pymysql
 
 
 def get_connection():
 
     connection = pymysql.connect(
-        host="localhost",
-        user="root",
-        password="123456",
-        database="portfolio_db",
+        host=os.getenv("DB_HOST"),
+        port=int(os.getenv("DB_PORT")),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        database=os.getenv("DB_NAME"),
         cursorclass=pymysql.cursors.DictCursor
     )
 
