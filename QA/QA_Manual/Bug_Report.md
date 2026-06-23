@@ -1,10 +1,10 @@
 # Bug Report
 
-## BUG-001 - Errore invio email tramite Resend
+## BUG-001 - Limitazione invio email tramite Resend
 
 ### Descrizione
 
-Durante il test del modulo contatti, il sistema non riusciva a inviare email verso indirizzi esterni.
+Durante la fase iniziale di test del modulo contatti, il sistema non riusciva a inviare email utilizzando il servizio Resend a causa delle limitazioni dell'ambiente di test.
 
 ### Ambiente
 
@@ -15,12 +15,12 @@ Durante il test del modulo contatti, il sistema non riusciva a inviare email ver
 ### Passi per Riprodurre
 
 1. Aprire il modulo contatti.
-2. Compilare tutti i campi.
+2. Compilare tutti i campi obbligatori.
 3. Inviare il messaggio.
 
 ### Risultato Attuale
 
-L'email non viene inviata.
+L'invio dell'email fallisce.
 
 Messaggio restituito:
 
@@ -28,13 +28,24 @@ Messaggio restituito:
 
 ### Risultato Atteso
 
-Invio corretto dell'email al destinatario.
+Invio corretto dell'email verso il destinatario configurato.
 
 ### Severità
 
 Media
 
 ### Stato
+
+Risolto
+
+### Soluzione Applicata
+
+Configurazione corretta del servizio Resend e verifica dell'indirizzo email autorizzato per l'invio.
+
+### Note
+
+Attualmente il sistema invia correttamente le notifiche email al proprietario del portfolio tramite il modulo contatti.
+
 
 Risolto
 
