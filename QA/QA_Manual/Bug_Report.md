@@ -82,11 +82,28 @@ Salvataggio corretto dei dati nel database.
 
 Alta
 
+### Severità
+
+Alta
+
 ### Stato
 
-In Analisi
+Aperto
 
----
+### Analisi
+
+Il problema è causato dal tentativo di connessione a un database MySQL configurato su "localhost" in un ambiente cloud (Render), dove il database non è disponibile.
+
+### Possibile Soluzione
+
+Migrare il database verso un servizio cloud dedicato come:
+
+* Railway
+* Aiven
+* Render PostgreSQL
+
+e configurare le variabili di ambiente per la connessione al database in produzione.
+
 
 ## BUG-003 - Disallineamento pulsante Hero
 
